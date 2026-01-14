@@ -70,7 +70,7 @@ A simplified structural model of a video-sharing platform.
 ## 🚀 How to View the Models
 The models are organized by complexity level:
 1.  Navigate to the `/Cul_ampolla` or `/Pizzeria` or `/YouTube_Simplified` directories.
-2.  Visual diagrams are available in `.png` or `.pdf` formats.
+2.  Visual diagrams are available in `.png` format.
 3.  Check for `.sql` files if you wish to see the database creation scripts (DDL).
 
 ## 🤝 Contributions
