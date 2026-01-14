@@ -1,43 +1,42 @@
 # 🗄️ Database Design: Entity-Relationship Modeling
 
 ## 📄 Description
-This repository contains a collection of **Entity-Relationship (ER) Diagrams** and database schemas designed to solve real-world business requirements. The project covers a range of complexities, from retail inventory management to social media platform structures. The primary goal is to master data normalization, relationship mapping (1:1, 1:N, N:M), and attribute definition in relational databases.
-
+This repository contains a collection of **Entity-Relationship (ER) Diagrams** and database schemas designed to solve simplified real-world business requirements. The project covers a range of complexities, from retail inventory management to social media platform structures. The primary goal is to master data normalization, relationship mapping (1:1, 1:N, N:M), and attribute definition in relational databases.
 
 
 ## 📚 Exercise Details
 
-### Level 1: Retail and Hospitality Systems
-
 **Exercise 1: "Cul d'Ampolla" Optical Store**
-The goal is to design a database to manage customers, sales, and inventory for an optical boutique.
-* **Suppliers:** Tracks NIF, name, telephone, fax, and detailed address (street, number, floor, door, city, postal code, and country).
-* **Brands & Glasses:** Logic ensures each brand is purchased from a unique supplier. Tracks specifics like frame type (floating, acetate, or metallic), frame color, lens graduation, lens color, and price.
-* **Customers:** Stores personal data, contact info, and registration dates.
-* **Referral System:** Includes logic to record if an existing customer recommended the store to a new client.
-* **Sales Tracking:** Every transaction records the specific glasses sold and the employee who managed the sale.
+An optical store named "Cul d'Ampolla" wants to computerize the management of customers and sales of glasses.
+* **Suppliers:** The store wants to know the supplier for each pair of glasses. Specifically, for each supplier, they need: Name, Address (street, number, floor, door, city, postal code, and country), Telephone, Fax, and NIF.
+* **Brands & Purchases:** The purchase policy is based on the fact that glasses of a specific brand will be bought from a single supplier (to get better prices), but they can buy various brands from one supplier.
+* **Glasses Info:** Brand, graduation of each lens, frame type (floating, plastic, or metallic), frame color, color of each lens, and price.
+* **Customers:** Store the name, postal address, telephone, email, and registration date.
+* **Referrals:** When a new customer arrives, store the customer who recommended the establishment (provided someone recommended it).
+* **Sales:** The system must indicate which employee sold each pair of glasses.
 
-**Exercise 2: Pizzeria Delivery Service**
-Model a web-based system for online food orders and home delivery.
-* **Geographic Hierarchy:** Normalizes data by separating Provinces and Localities (Provinces have many Localities).
-* **Orders:** Records the date/time, delivery type (home delivery vs. in-store pickup), product quantities, and total price.
-* **Product Management:** Handles diverse products including Pizzas, Burgers, and Drinks. Pizzas are further organized into dynamic categories.
-* **Staff & Logistics:** Differentiates between "Cooks" and "Delivery Drivers." For home deliveries, the system tracks the specific driver and the exact delivery timestamp.
+**Exercise 2: Pizzeria**
+You have been hired to design a website that allows online food delivery orders.
+* **Customers:** Store a unique identifier: Name, Surnames, Address, Postal Code, Locality, Province, and Telephone number.
+* **Geography:** Locality and Province data will be stored in separate tables. A locality belongs to a single province, and a province can have many localities. Each locality and province needs a unique ID and a name.
+* **Orders:** A person can place many orders, but a single order can only be placed by one person. For each order: Unique ID, Date/Time, type (delivery or in-store pickup), the quantity of products selected from each type, and total price.
+* **Products:** Products can be pizzas, burgers, and drinks. For each: Unique ID, Name, Description, Image, and Price.
+* **Pizza Categories:** For pizzas, there are various categories that can change names throughout the year. A pizza can only be in one category, but a category can have many pizzas.
+* **Shops & Employees:** An order is managed by a single shop. For each shop: Unique ID, Address, Postal Code, Locality, and Province. Many employees work in a shop, but an employee only works in one shop.
+* **Employee Details:** Unique ID, Name, Surnames, NIF, Telephone, and Role (cook or delivery driver). For home delivery orders, record the driver who made the delivery and the date/time of the delivery.
 
-
-
----
-
-### Level 2: Social Media Architecture
-
-**Exercise 1: YouTube Lite**
-A simplified structural model of a video-sharing platform.
-* **Users & Channels:** Manages user profiles (email, password, DOB, country) and the creation of personal channels with subscription logic.
-* **Video Content:** Stores metadata (title, size, filename, duration, thumbnails) and visibility states (Public, Hidden, Private). Includes support for multiple tags.
-* **User Interactions:** * **Feedback:** Tracks "Likes" and "Dislikes" on videos with specific timestamps.
-    * **Playlists:** Users can organize videos into Public or Private playlists.
-    * **Comments:** Users can comment on videos and "Like/Dislike" other users' comments.
-
+**Exercise 3: YouTube**
+We will create a simple model of what the database would be for a reduced version of YouTube.
+* **Users:** Unique ID, Email, Password, Username, Date of Birth, Gender, Country, and Postal Code.
+* **Videos:** A user publishes videos. For each: Unique ID, Title, Description, Size, Filename, Duration, Thumbnail, Number of plays, Number of likes, and Number of dislikes.
+* **Video States & Tags:** A video can have three states: public, hidden, or private. A video can have many tags (Unique ID and tag name). Record which user published the video and the date/time.
+* **Channels:** A user can create a channel. For each: Unique ID, Name, Description, and Creation Date.
+* **Interactions:**
+    * **Subscriptions:** A user can subscribe to other users' channels.
+    * **Likes/Dislikes:** A user can like or dislike a video only once. Track the users who liked/disliked a video and the date/time.
+    * **Playlists:** A user can create playlists. For each: Unique ID, Name, Creation Date, and Status (public or private).
+    * **Comments:** A user can write comments on a video. For each: Unique ID, text, and date/time.
+    * **Comment Feedback:** A user can mark a comment as like or dislike. Track the users and the date/time.
 
 
 ## 💻 Technologies Used
