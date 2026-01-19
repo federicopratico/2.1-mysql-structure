@@ -43,7 +43,7 @@ We will create a simple model of what the database would be for a reduced versio
 * **Database Modeling:** MySQL Workbench, draw.io, or Lucidchart.
 * **SQL:** Relational schema logic.
 * **Markdown:** Documentation and structure.
-* **Claude.ia:** Create sample datas
+* **Claude.ia:** Create sample datas.
 
 ## 📋 Requirements
 * Knowledge of **Relational Database Management Systems (RDBMS)**.
