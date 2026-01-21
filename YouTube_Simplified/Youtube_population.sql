@@ -142,3 +142,56 @@ INSERT INTO Comment (Text, Insertion_date, Video_target, Creator_id) VALUES
 ('Finally understanding quantum physics, thanks!', '2023-03-09 16:00:00', 8, 10),
 ('Exactly what I needed for my first build.', '2023-10-02 11:00:00', 9, 5),
 ('My kids loved this cake!', '2023-08-23 14:00:00', 10, 4);
+
+-- Insert Comment Reactions
+INSERT INTO Comment_reaction (Comment_id, User_id, Reaction_type, Reaction_date) VALUES
+-- Reactions on Comment 1 (Video 1 - iPhone Review by User 2)
+(1, 1, 'Like', '2023-09-21 14:00:00'),
+(1, 3, 'Like', '2023-09-21 15:00:00'),
+(1, 4, 'Like', '2023-09-22 09:00:00'),
+
+-- Reactions on Comment 2 (Video 2 - Carbonara by User 1)
+(2, 2, 'Like', '2023-06-16 17:00:00'),
+(2, 5, 'Like', '2023-06-17 10:00:00'),
+(2, 3, 'Like', '2023-06-18 12:00:00'),
+
+-- Reactions on Comment 3 (Video 3 - Tokyo by User 6)
+(3, 1, 'Like', '2023-07-23 15:00:00'),
+(3, 3, 'Like', '2023-07-24 11:00:00'),
+(3, 7, 'Like', '2023-07-25 13:00:00'),
+
+-- Reactions on Comment 4 (Video 4 - HIIT by User 7)
+(4, 2, 'Like', '2023-08-11 11:00:00'),
+(4, 4, 'Like', '2023-08-12 14:00:00'),
+(4, 6, 'Dislike', '2023-08-13 09:00:00'),
+
+-- Reactions on Comment 5 (Video 5 - GTA 6 by User 8)
+(5, 5, 'Like', '2023-09-06 19:00:00'),
+(5, 7, 'Like', '2023-09-07 10:00:00'),
+(5, 9, 'Like', '2023-09-08 15:00:00'),
+(5, 1, 'Like', '2023-09-09 11:00:00'),
+
+-- Reactions on Comment 6 (Video 6 - Acoustic by User 3)
+(6, 6, 'Like', '2023-05-19 16:00:00'),
+(6, 10, 'Like', '2023-05-20 12:00:00'),
+
+-- Reactions on Comment 7 (Video 7 - Bookshelf by User 9)
+(7, 7, 'Like', '2023-04-13 13:00:00'),
+(7, 1, 'Like', '2023-04-14 10:00:00'),
+(7, 8, 'Like', '2023-04-15 14:00:00'),
+
+-- Reactions on Comment 8 (Video 8 - Quantum by User 10)
+(8, 8, 'Like', '2023-03-09 17:00:00'),
+(8, 1, 'Like', '2023-03-10 11:00:00'),
+(8, 2, 'Dislike', '2023-03-11 13:00:00'),
+
+-- Reactions on Comment 9 (Video 9 - Budget PC by User 5)
+(9, 1, 'Like', '2023-10-02 12:00:00'),
+(9, 2, 'Like', '2023-10-03 09:00:00'),
+(9, 9, 'Like', '2023-10-04 15:00:00'),
+
+-- Reactions on Comment 10 (Video 10 - Chocolate Cake by User 4)
+(10, 2, 'Like', '2023-08-23 15:00:00'),
+(10, 1, 'Like', '2023-08-24 10:00:00'),
+(10, 6, 'Like', '2023-08-25 12:00:00'),
+(10, 8, 'Like', '2023-08-26 14:00:00');

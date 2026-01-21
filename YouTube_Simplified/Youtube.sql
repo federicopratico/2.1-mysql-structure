@@ -110,8 +110,19 @@ CREATE TABLE Comment (
     Text VARCHAR(255),
     Insertion_date DATETIME NOT NULL,
     Video_target INT NOT NULL,
-    Creator_id INT NOT NULL UNIQUE,
+    Creator_id INT NOT NULL,
     PRIMARY KEY (Commnt_id),
     FOREIGN KEY (Video_target) REFERENCES Video(Video_id),
-    FOREIGN KEY (Creator_id) REFERENCES User(User_id)
+FOREIGN KEY (Creator_id) REFERENCES User(User_id)
 );
+
+DROP TABLE IF EXISTS Comment_reaction;
+CREATE TABLE Comment_reaction (
+    Comment_id INT,
+    User_id INT,
+    Reaction_type ENUM('Like', 'Dislike') NOT NULL,
+    Reaction_date DATETIME,
+    PRIMARY KEY (Comment_id,User_id),
+    FOREIGN KEY (Comment_id) REFERENCES Comment(Commnt_id),
+    FOREIGN KEY (User_id) REFERENCES User(User_id)
+)
